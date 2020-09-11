@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Linq; //Language integrated query
 
 namespace LinqExercise
 {
@@ -25,11 +25,30 @@ namespace LinqExercise
 
             //Print the Sum and Average of numbers
             var sum = numbers.Sum();
+
+            /*foreach (var num in numbers)
+             * {
+             * sum += num;
+             * }   This is the same as above*/
+
             var avg = numbers.Average();
             Console.WriteLine($"The sum of these numbers is: {sum}");
             Console.WriteLine($"The average of these numbers is: {avg}");
 
             //Order numbers in ascending order and decsending order. Print each to console.
+            var ascend = numbers.OrderBy(num => num);
+            var descend = numbers.OrderByDescending(x => x);  //Think of lamda as "return"
+            Console.WriteLine("----------Ascending----------");
+            foreach (var num in ascend)
+            {
+                Console.WriteLine(num);
+            }
+            Console.WriteLine("----------Descending----------");
+            foreach (var num in descend)
+            {
+                Console.WriteLine(num);
+            }
+            
 
             //Print to the console only the numbers greater than 6
 
